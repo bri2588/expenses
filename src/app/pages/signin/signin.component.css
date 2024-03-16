@@ -1,0 +1,75 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transform: scale(2.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #f1f1f1;
+  padding: 20px;
+
+  button, mat-form-field {
+    width: -webkit-fill-available;
+  }
+
+  button:last-child {
+    margin-top: 5px ;
+  }
+
+  button {
+    &[mat-button] {}
+    width: auto;
+  }
+
+  .recover-password {
+    align-self: flex-end;
+  }
+
+  .recover {
+    color: forestgreen;
+  }
+
+  .recover:disabled {
+    color: gray;
+  }
+  .recover:hover {
+    text-decoration: forestgreen underline;
+  }
+
+  .register {
+    color: forestgreen;
+    border: 1px solid gray;
+  }
+
+
+  .login-button {
+    background: forestgreen;
+    color: white;
+  }
+
+  .login-button:disabled {
+    background: grey;
+  }
+
+}
+
+h1 {
+  color: green;
+}

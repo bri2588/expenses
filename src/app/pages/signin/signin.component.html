@@ -1,0 +1,32 @@
+<div class="container">
+<form [formGroup]="form">
+  <h1>Enter with your account</h1>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+    @if (form.get('email')!.hasError('required')) {
+      <mat-error>Email is required</mat-error>
+    }
+    @if (form.get('email')!.hasError('email') && !form.get('email')!.hasError('required')) {
+      <mat-error>Invalid email</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Password" formControlName="password">
+    @if (form.get('password')!.hasError('required')) {
+      <mat-error>Password is required</mat-error>
+    }
+    @if (form.get('password')!.hasError('minlength') && !form.get('password')!.hasError('required')) {
+      <mat-error>Password is to short. Must be at least of length 6.</mat-error>
+    }
+  </mat-form-field>
+  <div class="recover-password">
+    <button mat-button  class="recover"
+    [disabled]="!form.get('email')!.valid">Recover password</button>
+  </div>
+  <button mat-raised-button color="primary" class="login-button"
+  [disabled]="!form.valid">LOGIN</button>
+  <button mat-stroked-button color="primary" class="register">Register</button>
+</form>
+</div>
